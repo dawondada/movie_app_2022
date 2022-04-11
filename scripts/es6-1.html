@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ES6 변수 : let, const </title>
+<script>
+/*
+var num = 10;
+var num = 20;
+document.write(num);
+// var 변수를 중복 선언 가능
+*/
+
+/*
+let num = 10;
+let num = 20;
+document.write(num); // 에러
+//let 변수는 중복 선언 안됨.
+*/
+
+const DIVISION_VALUE = 100;
+//const DIVISION_VALUE = 200;c //const 중복 선언 안됨.
+//DIVISION_VALUE = 300; //상수. 즉 값을 변경할 수 없음
+
+//let cm = prompt('cm을 입력하세요','');
+//let m = cm / DIVISION_VALUE;
+//document.write(m + 'm입니다.');
+
+//함수 레벨 스코프와 블록 레벨 스코프
+//전역변수, 지역변수 
+
+var kor=90;
+function getScore(){
+    kor = 100; //전역변수
+    console.log(kor);//100
+}
+getScore();
+console.log(kor); //100
+
+var kor=90;
+function getScore(){
+    var kor =100; //지역변수
+    console.log(kor); //100
+}
+getScore();
+console.log(kor); //90
+
+var num = 10; //전역변수
+console.log(num);
+{
+    var num = 20; //전역변수
+    console.log(num); //20
+}
+console.log(num);
+
+let num1=100; //전역변수
+{
+    let num1=20;//지역변수
+    console.log(num1);//20
+}
+console.log(num1); //100
+
+const num2=10; //전역
+{
+    const num2 =30; //지역
+    console.log(num2); 
+}
+console.log(num2); //10
+
+var num=70; //전역변수
+if(num===70){
+    var sum=50; //전역변수
+}
+console.log(sum); //50
+
+let num3=90; //전역변수
+if(num3===90){
+    let sum1=100;//지역변수
+}
+console.log(sum1); //에러
+
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

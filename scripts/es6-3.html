@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>화살표 함수</title>
+<script>
+
+//선언적 함수 (함수를 호출할때 함수 앞,뒤 위치에서 모두 호출가능)
+//함수를 만들고 호출을 하는 형태
+
+compute(10,100);
+function compute(a,b){
+    var x=a;
+    var y=b;
+    var result = x/y;
+    console.log(result);
+}
+//compute(10,100);
+
+var compute = function(a,b){
+    var x=a;
+    var y=b;
+    var result = x/y;
+    console.log(result);
+}
+compute(10,100);
+
+var compute = (a,b) => {
+        var x=a;
+        var y=b;
+        var result =x/y;
+        console.log(result);
+    }
+compute(10,100);
+
+//익명 함수
+//함수의 이름이 없는 경우, 함수를 호출할때 반드시 함수의 뒤에서 호출해야함, 앞의 위치에서 호출할 경우 값이 나오지 않음.
+//compute2(); //결과 안나옴 erro > it's not a function ~~ 
+var compute2 = function(a,b){
+    var x=a;
+    var y=b;
+    var result2 = x*y;
+    console.log(result2); 
+}
+compute2(0.5,10);
+
+var compute2 = (a,b) => {
+    var x=a;
+    var y=b;
+    var result2 =x*y;
+    console.log(result2); 
+}
+compute2(0.5,10);
+
+
+//즉시 실행 함수 - 선언과 동시에 실행 함수, 재호출 안됨. 한번만 실행
+(function(a){
+    var sum=a;
+    console.log(sum);
+})(10);
+
+var instant = (function(){
+    console.log('즉시 실행 함수');
+})();
+
+
+//매개변수의 개수가 정해지지 않은 함수 
+//arguments 객체는 인자값을 저장해주는 객체
+function showSubject(){
+    for(i=0;i<arguments.length;i++){
+        console.log(arguments[i]);
+    }
+}
+showSubject('html','css','js','jquery');
+showSubject('abc','def');
+
+//ES6 화살표 함수-function키워드 생략,{}, return 생략
+var theFnc = function(a,b){
+    return a*b;
+}
+console.log(theFnc(2,5));
+
+var theFnc = (a,b) => a*b;
+console.log(theFnc(2,5));
+
+function theFnc2(c,d){
+    var sum = c+d;
+    return sum;
+}
+console.log(theFnc2(10,5));
+
+var theFnc2 = function(c,d){
+    var sum = c+d;
+    return sum;
+}
+console.log(theFnc2(10,5));
+
+var theFnc2 = (c,d) => {
+    var sum = c+d;
+    return sum;
+}
+console.log(theFnc2(10,5));
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
